@@ -1,0 +1,50 @@
+﻿@model ASP.NET_Core_Web_Development_Activity2c.Models.AppointmentModel
+
+<h4>AppointmentModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <!-- Link nach abschließen der Seite -->
+        <form asp-action="Details">
+            <!-- Data Validation Part -->
+            <div asp-validation-summary="ModelOnly" class="text-danger"><!-- Default Error Message --></div>
+            <div class="form-group">
+                <label asp-for="PatientName" class="control-label"></label>
+                <input asp-for="PatientName" class="form-control" />
+                <span asp-validation-for="PatientName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="AppointmentDate" class="control-label"></label>
+                <input asp-for="AppointmentDate" class="form-control" />
+                <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PatientWorth" class="control-label"></label>
+                <input asp-for="PatientWorth" class="form-control" />
+                <span asp-validation-for="PatientWorth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DoctorName" class="control-label"></label>
+                <input asp-for="DoctorName" class="form-control" />
+                <span asp-validation-for="DoctorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PainLevel" class="control-label"></label>
+                <input asp-for="PainLevel" class="form-control" />
+                <span asp-validation-for="PainLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
